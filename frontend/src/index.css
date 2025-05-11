@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .main-container {
+    @apply min-h-screen flex flex-col items-center justify-center py-4 px-4 md:px-8 lg:px-10 transition-colors duration-300;
+  }
+
+  .dark .main-container {
+    @apply bg-[#1D1D1D];
+  }
+
+  /* .content-container {
+    @apply w-full max-w-7xl flex flex-col items-center;
+  } */
+
+  .button-base {
+    @apply flex items-center justify-center px-5 py-3 rounded-lg text-lg font-medium transition-colors duration-300;
+  }
+
+  .download-button {
+    @apply button-base bg-teal-light text-white hover:bg-teal h-[50px] leading-[1.2];
+  }
+
+  .gray-button {
+    @apply button-base bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200;
+  }
+
+  .white-button {
+    @apply button-base bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-sm;
+  }
+
+  .logo-container {
+    @apply mr-4;
+  }
+
+  /* .logo-container img {
+    @apply h-[80px];
+  } */
+
+  .header-row {
+    @apply w-full flex flex-wrap items-center justify-between gap-3 mb-6;
+  }
+
+  .transcript-box {
+    @apply w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm mt-6 mb-4;
+  }
+
+  .modal {
+    @apply fixed inset-0 flex items-center justify-center z-50 bg-black/60;
+  }
+
+  .modal-content {
+    @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-md;
+  }
+  
+  .file-upload-box {
+    @apply bg-gray-100 dark:bg-gray-700 rounded-lg p-4 w-[200px] h-[50px] flex items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 dark:border-gray-600;
+  }
+}
